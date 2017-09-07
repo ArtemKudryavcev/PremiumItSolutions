@@ -1,36 +1,31 @@
 package steps;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import org.openqa.selenium.By;
-import utils.Util;
-
+import com.codeborne.selenide.Selenide;
+import cucumber.api.java.en.*;
+import driver.DriverFactory;
+import pages.MainPage;
 /**
+ * Класс с описанием шагов
  * Created by artem on 04.09.2017.
  */
-public class MainPageSteps extends Util{
+public class MainPageSteps extends DriverFactory {
 
-    private Util util;
-
-    public MainPageSteps(Util util) {
-        this.util = util;
-    }
+    private MainPage mainPage;
 
     @Given("^navigate to the main page$")
     public void navigateToTheLoginPage() throws Throwable {
-        webDriver.navigate().to("http://www.mvideo.ru/");
-        //Selenide.open("http://www.mvideo.ru/");
+        Selenide.open(mainPage.MAINPAGE_URL);
         webDriver.manage().window().maximize();
         webDriver.navigate().refresh();
     }
 
     @And("^click on department (.*)$")
-    public void clickOnDepartmentDepartment(String department) throws Throwable {
-        webDriver.findElement(new By.ByXPath("(//nav[@class='header-nav']//*[text()='" + department + "'])[last()]")).click();
+    public void clickOnDepartment(String department) throws Throwable {
+        Selenide.$x(mainPage.DEPARTAMENT_BEGIN_OF_XPATH + department + "'])[last()]").click();
     }
 
     @Then("^should see the department page$")
     public void shouldSeeTheUserformPage() throws Throwable {
+        System.out.println("GOOD!!!");
     }
 }

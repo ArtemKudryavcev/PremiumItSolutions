@@ -1,7 +1,8 @@
 package steps;
 
-import com.codeborne.selenide.Selenide;
-import cucumber.api.java.en.*;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import driver.DriverFactory;
 import pages.MainPage;
 /**
@@ -12,16 +13,15 @@ public class MainPageSteps extends DriverFactory {
 
     private MainPage mainPage;
 
-    @Given("^navigate to the main page$")
-    public void navigateToTheLoginPage() throws Throwable {
-        Selenide.open(mainPage.MAINPAGE_URL);
-        webDriver.manage().window().maximize();
-        webDriver.navigate().refresh();
+    @Given("^navigate to main page$")
+    public void navigateToMainPage() throws Throwable {
+        mainPage = new MainPage(webDriver);
+        mainPage.navigateToMainPage();
     }
 
     @And("^click on department (.*)$")
     public void clickOnDepartment(String department) throws Throwable {
-        Selenide.$x(mainPage.DEPARTAMENT_BEGIN_OF_XPATH + department + "'])[last()]").click();
+        mainPage.clickOnDepartment(department);
     }
 
     @Then("^should see the department page$")

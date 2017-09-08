@@ -4,7 +4,7 @@ import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.WebDriver;
 
 /**
- * Created by atriu on 08.09.2017.
+ * Created by artem on 08.09.2017.
  */
 public abstract class AbstractPage {
     protected WebDriver webDriver;
@@ -17,7 +17,7 @@ public abstract class AbstractPage {
     public MainPage navigateToMainPage() {
         Selenide.open(mainPage.MAINPAGE_URL);
         webDriver.manage().window().maximize();
-        webDriver.navigate().refresh();
+        Selenide.refresh();
         return new MainPage(webDriver);
     }
 }

@@ -4,7 +4,6 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 /**
  * Created by atriu on 04.09.2017.
  */
@@ -16,7 +15,7 @@ public class DriverFactory {
             System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
             webDriver = new ChromeDriver();
             WebDriverRunner.setWebDriver(webDriver); // установка драйвера для селенида
-            Configuration.timeout = 45000; // установка тайм-аута для селенида
+            Configuration.timeout = 45000;           // установка тайм-аута для селенида
             webDriver.manage().window().maximize();
         }
         return webDriver;

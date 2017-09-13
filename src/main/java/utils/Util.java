@@ -3,7 +3,6 @@ package utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
 /**
  * Created by atriu on 11.09.2017.
  */
@@ -19,7 +18,6 @@ public class Util {
         }
         return  properties.getProperty(key);
     }
-
 
     public static String getRunConfigProperty(String key) {
         return getProperty(key, "config.properties");

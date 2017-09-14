@@ -3,15 +3,17 @@ package steps;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import driver.DriverFactory;
+import org.openqa.selenium.WebDriver;
 import pages.MainPage;
 /**
  * Класс с описанием шагов
  * Created by artem on 04.09.2017.
  */
-public class MainPageSteps extends DriverFactory {
+//todo не надо наследоваться. подумай, где хранить инстанс драйвера, как можно передавать драйвер в степдеф классы.
+public class MainPageSteps {
 
     private MainPage mainPage;
+    private WebDriver webDriver;
 
     @Given("^navigate to main page$")
     public void navigateToMainPage() throws Throwable {

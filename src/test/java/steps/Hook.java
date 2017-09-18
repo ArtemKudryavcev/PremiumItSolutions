@@ -1,6 +1,5 @@
 package steps;
 
-import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import driver.DriverFactory;
@@ -15,7 +14,7 @@ public class Hook {
     }
 
     @After
-    public void teardownTest(Scenario scenario) {
+    public void teardownTest() {
         DriverFactory.quit();
     }
 }

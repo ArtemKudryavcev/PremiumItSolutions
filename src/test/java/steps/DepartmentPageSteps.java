@@ -1,6 +1,6 @@
 package steps;
 
-import cucumber.api.java.en.Then;
+import cucumber.api.java.ru.*;
 import pages.DepartmentPage;
 import ru.yandex.qatools.allure.annotations.Step;
 
@@ -13,11 +13,11 @@ public class DepartmentPageSteps {
     private DepartmentPage departmentPage;
 
     @Step
-    @Then("^department page is displayed$")
+    @То("^страница департамента отображается$")
     public void shouldSeeTheUserformPage() throws Throwable {
-        //System.out.println("GOOD!!!");
-        int divisionByZero = 2 / 0;
-        System.out.println(divisionByZero);
+        System.out.println("GOOD!!!");
+        //int divisionByZero = 2 / 0;
+        //System.out.println(divisionByZero);
     }
 
 }

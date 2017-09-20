@@ -1,10 +1,11 @@
-Feature: SelectDepartment
+# language: ru
+Функционал: Выбор департамента
 
-  Scenario Outline: Navigate to the main page and click on a department
-    Given navigate to main page
-    And click on department <department>
-    Then department page is displayed
+  Структура сценария: Перейти на главную страницу и нажать на департамент
+    Дано перейти на главную страницу
+    И нажать на департамент <департамент>
+    То страница департамента отображается
 
-    Examples:
-      | department  |
+    Примеры:
+      | департамент |
       | Автотехника |

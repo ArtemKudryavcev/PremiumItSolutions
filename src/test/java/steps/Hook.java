@@ -4,6 +4,8 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import driver.DriverFactory;
 
+import java.io.IOException;
+
 /**
  * Класс для настроек до/после запуска теста
  * Created by artem on 04.09.2017.
@@ -15,8 +17,7 @@ public class Hook {
     }
 
     @After
-    public void teardownTest() {
+    public void teardownTest() throws IOException {
         DriverFactory.quit();
-       // AllureRuntime.attachLog();
     }
 }

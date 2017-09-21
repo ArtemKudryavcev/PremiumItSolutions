@@ -1,8 +1,11 @@
 package steps;
 
-import cucumber.api.java.ru.*;
-import pages.DepartmentPage;
+import com.codeborne.selenide.Selenide;
+import cucumber.api.java.ru.То;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
+import utils.AllureRuntime;
 
 /**
  * Класс с описанием шагов страницы DepartmentPage
@@ -10,14 +13,18 @@ import ru.yandex.qatools.allure.annotations.Step;
  */
 public class DepartmentPageSteps {
 
-    private DepartmentPage departmentPage;
+    @FindBy(className = "header-nav-item-link2")
+    private WebElement department;
 
+    //метод, который точно упадет
     @Step
     @То("^страница департамента отображается$")
     public void shouldSeeTheUserformPage() throws Throwable {
-        System.out.println("GOOD!!!");
-        //int divisionByZero = 2 / 0;
-        //System.out.println(divisionByZero);
-    }
 
+        try{
+            Selenide.$(department).click();
+        } catch (Exception e) {
+            AllureRuntime.error(e);
+        }
+    }
 }

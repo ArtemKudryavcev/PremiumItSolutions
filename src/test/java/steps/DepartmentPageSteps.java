@@ -23,7 +23,7 @@ public class DepartmentPageSteps {
 
         try{
             Selenide.$(department).click();
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
             AllureRuntime.error(e);
         }
     }

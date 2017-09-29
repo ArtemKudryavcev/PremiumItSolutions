@@ -6,6 +6,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 import java.io.File;
 import java.io.IOException;
 /**
+ * Класс для обработки ошибок и логгирования
  * Created by artem on 20.09.2017.
  */
 public class AllureRuntime {
@@ -24,5 +25,9 @@ public class AllureRuntime {
     public static byte[] attachScreenshot() throws IOException {
         File screenshot = Screenshots.takeScreenShotAsFile();
         return Files.toByteArray(screenshot);
+    }
+
+    public static void clearScreenshotList() {
+        Screenshots.screenshots.getScreenshots().clear();
     }
 }

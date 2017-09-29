@@ -4,8 +4,10 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 /**
- * Created by atriu on 04.09.2017.
+ * Класс-фабрика для WebDriver
+ * Created by artem on 04.09.2017.
  */
 public class DriverFactory {
     private static WebDriver webDriver;

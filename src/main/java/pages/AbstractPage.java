@@ -15,9 +15,11 @@ import utils.Util;
 public abstract class AbstractPage {
     protected WebDriver webDriver;
 
+    //Поле поиска
     @FindBy(css = "input.sel-field-search,.header-search-input")
     private WebElement fieldSearch;
 
+    //Значек лупы для поля поиска
     @FindBy(css = ".header-search-btn")
     private WebElement buttonSearch;
 

@@ -5,10 +5,12 @@ import com.google.common.io.Files;
 import ru.yandex.qatools.allure.annotations.Attachment;
 import java.io.File;
 import java.io.IOException;
+
 /**
  * Класс для обработки ошибок и логгирования
  * Created by artem on 20.09.2017.
  */
+
 public class AllureRuntime {
 
     public static void error(Exception e) throws IOException {

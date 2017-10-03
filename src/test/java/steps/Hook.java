@@ -5,7 +5,6 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import driver.DriverFactory;
 import utils.AllureRuntime;
-
 import java.io.IOException;
 
 /**

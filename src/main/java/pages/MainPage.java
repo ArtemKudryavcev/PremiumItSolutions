@@ -9,10 +9,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Util;
 import java.util.List;
+
 /**
  * Класс для главной страницы
  * Created by artem on 05.09.2017.
  */
+
 public class MainPage extends AbstractPage {
 
     @FindBy(className = "header-nav-item-link")

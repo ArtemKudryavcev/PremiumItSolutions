@@ -11,7 +11,7 @@ import java.util.Properties;
  */
 public class Util {
 
-    //Метод для парсинга
+    //Метод для парсинга properties
     public static String getProperty(String key, String resourceFileName) {
         InputStream inputStream = Util.class.getClassLoader().getResourceAsStream(resourceFileName);
         Properties properties = new Properties();

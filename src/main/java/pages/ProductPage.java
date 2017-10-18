@@ -12,13 +12,13 @@ import utils.Util;
  */
 public class ProductPage extends AbstractPage {
 
+    @FindBy(className = "c-pdp-compare")
+    private WebElement checkboxCompare;
+
     public ProductPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-
-    @FindBy(className = "c-pdp-compare")
-    private WebElement checkboxCompare;
 
     public void addElementToComparison() throws Exception {
         Util.clickOnElement(checkboxCompare);

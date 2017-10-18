@@ -3,11 +3,13 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import driver.DriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Util;
+
 import java.util.List;
 
 /**
@@ -16,6 +18,8 @@ import java.util.List;
  */
 
 public class MainPage extends AbstractPage {
+
+    private final String SUBCATEGORY_XPATH = "//ul[contains(@class,'sel-navigation')]/li[contains(@class,'active')]//li[contains(@class,'header-nav-drop-down-column')][.//*[contains(text(),'%s')]]//li[@class='header-nav-drop-down-list-item']//a[contains(text(),'%s')]";
 
     @FindBy(className = "header-nav-item-link")
     private List<WebElement> departments;
@@ -36,5 +40,12 @@ public class MainPage extends AbstractPage {
     public ComparisonPage navigateToComparisonPage() throws Exception {
         Util.clickOnElement(iconCompareList);
         return new ComparisonPage(DriverFactory.getObject());
+    }
+
+    public SubcategoryPage navigateToSubcategory(String department, String category, String subcategory) throws Exception {
+        Selenide.$$(departments).filter(Condition.text(department)).first().hover();
+        By subCategoryByXPath = new By.ByXPath(String.format(SUBCATEGORY_XPATH, category, subcategory));
+        Util.clickOnElement(subCategoryByXPath);
+        return new SubcategoryPage(DriverFactory.getObject());
     }
 }

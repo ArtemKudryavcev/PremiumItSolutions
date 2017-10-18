@@ -13,5 +13,5 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/java/features"},
         glue = "steps",
-        tags = "@tag2")
+        tags = "@tag3")
 public class TestRunner {}

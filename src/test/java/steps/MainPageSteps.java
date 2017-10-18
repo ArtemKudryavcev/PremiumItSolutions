@@ -1,7 +1,6 @@
 package steps;
 
-import cucumber.api.java.ru.Дано;
-import cucumber.api.java.ru.И;
+import cucumber.api.java.ru.*;
 import driver.DriverFactory;
 import pages.MainPage;
 
@@ -33,4 +32,10 @@ public class MainPageSteps {
     public void navigateToComparisonPage() throws Exception {
         mainPage.navigateToComparisonPage();
     }
+
+    @Если("^в департаменте (.*) из категории (.*) выбрать (.*)$")
+    public void navigateToSubcategory(String department, String category, String subcategory) throws Exception {
+        mainPage.navigateToSubcategory(department, category, subcategory);
+    }
+
 }

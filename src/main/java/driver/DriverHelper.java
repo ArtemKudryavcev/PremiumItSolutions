@@ -31,7 +31,7 @@ public class DriverHelper {
                 System.setProperty(Util.getRunConfigProperty("browser_ie"), Util.getRunConfigProperty("browser_ie_path"));
                 capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
                 capabilities.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
-                return new InternetExplorerDriver();
+                return new InternetExplorerDriver(capabilities);
 
             default:
                 return null;
